@@ -18,10 +18,11 @@
  *
  */
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
-//
-// const fs = require('fs');
-// const mnemonic = fs.readFileSync(".secret").toString().trim();
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+
+const fs = require('fs');
+const mnemonic = fs.readFileSync(".secret").toString().trim();
+const endpoint = 'https://apis.ankr.com/2802ee0def474dbf8280c23772af1e46/04653504e0748abb9cd9afbea915eb46/eth/fast/ropsten'
 
 module.exports = {
   /**
@@ -46,6 +47,18 @@ module.exports = {
      port: 7545,            // Standard Ethereum port (default: none)
      network_id: 5777,       // Any network (default: none)  
     },
+
+    // [...]
+
+  ankrRopsten: {
+    provider: () => new HDWalletProvider(mnemonic, endpoint),
+    network_id: 3,
+    gas: 5500000,
+    confirmations: 2,
+    skipDryRun: true,
+
+// [...]
+  },
     //
     // An additional network, but with some advanced options…
     // advanced: {
