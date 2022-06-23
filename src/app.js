@@ -134,6 +134,7 @@ App = {
         App.contracts.Voting.deployed().then(function (instance) {
             instance.vote(movieID, { from: App.account }).then(function (address) {
                 console.log(`Successfully voted on ${movieID}`, address);
+                alert(`Successfully voted on ${movieID}`, address);
             }).catch(function (err) {
                 console.error(err);
             });
@@ -152,6 +153,7 @@ App = {
         App.contracts.Voting.deployed().then(function (instance) {
             instance.addMovie(title, cover, { from: App.account }).then(function () {
                 console.log(`Successfully added movie ${title}`);
+                alert(`Successfully added movie ${title}`);
                 event.target.reset();
             }).catch(function (err) {
                 console.error(err);

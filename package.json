@@ -1,15 +1,19 @@
 {
   "name": "movie-vote",
   "version": "1.0.0",
+  "homepage": "https://adnansaif121.github.io/Movies_voting_System",
   "description": "A tutorial for simple voting systems.",
   "license": "MIT",
   "main": "truffle-config.js",
   "scripts": {
     "dev": "lite-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build", 
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@truffle/hdwallet-provider": "^2.0.3",
+    "gh-pages": "^4.0.0",
     "lite-server": "^2.6.1"
   }
 }
